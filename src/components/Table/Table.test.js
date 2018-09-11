@@ -8,11 +8,6 @@ describe('Table', () => {
     }
     const shallowWrapper = shallow(<Table {...props} />)
 
-    it('Sort data', () => {
-        shallowWrapper.find('.table__td-sort').simulate('click')
-        expect(shallowWrapper.state().sort).toEqual('DESC')
-    })
-
     it('Search', () => {      
         shallowWrapper.find('#search').simulate('change', { target: { value: 'query' }})
         expect(shallowWrapper.state().search).toEqual('query')
